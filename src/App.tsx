@@ -1,35 +1,35 @@
+import SearchBox from "components/SearchBox";
 import React, { ChangeEvent, FunctionComponent, useState } from "react";
 import { Route, Switch } from "react-router";
 
-type Props = {
-    value: string;
-    onSearch(value: string): void;
-}
 
-const SearchBox: FunctionComponent<Props> = ({
-    value,
-    onSearch
-}) => {
-
-    const onChange = (event: ChangeEvent<HTMLInputElement>) => {
-        const value = event.currentTarget.value;
-        onSearch(value);
-    }
-
-    return <div>
-        <input type="text" value={value} onChange={onChange}/>
-    </div>
-}
 
 const App: FunctionComponent = () => {
     const [value, setValue] = useState("");
-
+    const [suggestions, setSuggestions] = useState([]);
+    const [suggestions1, setSuggestions1] = useState([]);
+    
     const onSearch = (value: string) => {
         setValue(value)
     }
 
+    const onDelete = () => {
+        
+    }
+
     return <div>
-        <SearchBox value={value} onSearch={onSearch}/>
+        <SearchBox
+            value={value}
+            onSearch={onSearch}
+            suggestions={suggestions}/>
+        <div>
+            {suggestions1.map(pr => 
+            <div>
+                <div>{pr.value}</div>
+                <div onClick={onDelete}></div>
+            </div>
+        )}
+        </div>
         <div>
         </div>
     </div>
