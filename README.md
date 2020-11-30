@@ -13,3 +13,5 @@
 # Tribute
 
 [Flags sources - hjnilsson/country-flags](https://github.com/hjnilsson/country-flags)
+
+[Map sources - d-maps.com](https://d-maps.com)
