@@ -1,5 +1,6 @@
-import React, { ChangeEvent, FunctionComponent, useState } from "react";
-import { Route, Switch } from "react-router";
+import React, { ChangeEvent, FunctionComponent, useEffect, useRef, useState } from "react";
+
+import styles from "./searchBox.scss";
 
 type Props = {
     value: string;
@@ -23,9 +24,16 @@ const SearchBox: FunctionComponent<Props> = ({
     }
 
     return <div>
-        <input type="text" value={value} onChange={onChange}/>
+        <input
+            autoFocus
+            className={styles.input}
+            type="text"
+            value={value}
+            onChange={onChange}/>
         <ul>
-            {suggestions.map(pr => <li onClick={onSuggestionClick}>{pr.value}</li>)}
+            {suggestions.map(pr => <li
+                className={styles.suggestion}
+                onClick={onSuggestionClick}>{pr.value}</li>)}
         </ul>
     </div>
 }
