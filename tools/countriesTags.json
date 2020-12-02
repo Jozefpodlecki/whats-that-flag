@@ -1,0 +1,26 @@
+[
+    {
+        "iso3166-1-alpha-2": "kr",
+        "tags": [
+            "Taegukgi",
+            "Asia",
+            "white",
+            "circle",
+            "red",
+            "blue",
+            "black",
+            "South Korea"
+        ]
+    },
+    {
+        "iso3166-1-alpha-2": "de",
+        "tags": [
+            "Germany",
+            "Europe",
+            "tricolor",
+            "black",
+            "red",
+            "gold"
+        ]
+    }
+]

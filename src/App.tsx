@@ -6,13 +6,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Header from "components/Header";
 import { getFlags } from "api";
 import { ImageItem } from "models/ImageItem";
+import Container from "components/Container";
 
 
 const App: FunctionComponent = () => {
     const [value, setValue] = useState("");
     const [suggestions, setSuggestions] = useState([]);
     const [suggestions1, setSuggestions1] = useState([]);
-    const [items, setItems] = useState<ImageItem[]>([]);
+    
 
     const onSearch = (value: string) => {
         setValue(value)
@@ -22,12 +23,7 @@ const App: FunctionComponent = () => {
         
     }
 
-    useEffect(() => {
-        getFlags()
-            .then(result => {
-                setItems(result.slice(0, 5));
-            })
-    }, []);
+  
 
     return <div>
         <Header/>
@@ -43,11 +39,7 @@ const App: FunctionComponent = () => {
             </div>
         )}
         </div>
-        <div>
-            {items.map(pr => <div>
-                <img src={pr.url} alt={pr.id}/>
-            </div>)}
-        </div>
+        <Container/>
     </div>
 };
 
