@@ -22,5 +22,17 @@
             "red",
             "gold"
         ]
+    },
+    {
+        "iso3166-1-alpha-2": "de",
+        "tags": [
+            "East Timor",
+            "black",
+            "triangle",
+            "white",
+            "star",
+            "yellow",
+            "five-pointed star"
+        ]
     }
 ]
