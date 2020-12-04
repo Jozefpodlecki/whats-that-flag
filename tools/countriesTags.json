@@ -24,9 +24,10 @@
         ]
     },
     {
-        "iso3166-1-alpha-2": "de",
+        "iso3166-1-alpha-2": "tl",
         "tags": [
             "East Timor",
+            "Timor Leste",
             "black",
             "triangle",
             "white",
@@ -34,5 +35,112 @@
             "yellow",
             "five-pointed star"
         ]
+    },
+    {
+        "iso3166-1-alpha-2": "cl",
+        "tags": [
+            "star",
+            "five-pointed star",
+            "white",
+            "red",
+            "blue"
+        ]
+    },
+    {
+        "iso3166-1-alpha-2": "cn",
+        "tags": [
+            "Wǔxīng Hóngqí",
+            "Five-star Red Flag",
+            "star",
+            "five golden stars",
+            "five-pointed star",
+            "red",
+            "yellow"
+        ]
+    },
+    {
+        "iso3166-1-alpha-2": "ph",
+        "tags": [
+            "crimson red",
+            "royal blue",
+            "white",
+            "golden-yellow",
+            "five-pointed star",
+            "golden-yellow sun with eight primary rays"
+        ]
+    },
+    {
+        "iso3166-1-alpha-2": "pg",
+        "tags": [
+            "black",
+            "white",
+            "red",
+            "yellow",
+            "The Southern Cross",
+            "raggiana bird-of-paradise"
+        ]
+    },
+    {
+        "iso3166-1-alpha-2": "au",
+        "tags": [
+            "Australia",
+            "blue",
+            "white",
+            "red",
+            "five-pointed star",
+            "seven-pointed star",
+            "Blue Ensign",
+            "Union Jack",
+            "Union Flag"
+        ]
+    },
+    {
+        "iso3166-1-alpha-2": "nz",
+        "tags": [
+            "New Zealand",
+            "blue",
+            "white",
+            "red",
+            "five-pointed star",
+            "Blue Ensign",
+            "Union Jack",
+            "Union Flag",
+            "The Southern Cross",
+            "Crux"
+        ]
+    },
+    {
+        "iso3166-1-alpha-2": "it",
+        "tags": [
+            "Italy",
+            "green",
+            "white",
+            "red",
+            "vertical"
+        ]
+    },
+    {
+        "iso3166-1-alpha-2": "fr",
+        "tags": []
+    },
+    {
+        "iso3166-1-alpha-2": "pl",
+        "tags": []
+    },
+    {
+        "iso3166-1-alpha-2": "ru",
+        "tags": []
+    },
+    {
+        "iso3166-1-alpha-2": "ph",
+        "tags": []
+    },
+    {
+        "iso3166-1-alpha-2": "mw",
+        "tags": []
+    },
+    {
+        "iso3166-1-alpha-2": "ms",
+        "tags": []
     }
 ]
