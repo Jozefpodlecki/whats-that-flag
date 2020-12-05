@@ -25,8 +25,8 @@ for row in rows:
         "iso3166-1-alpha-2": name,
         "countryName": country,
         "tags": [],
-        "imageUrl": "{}.png".format(name),
-        "svgUrl": "{}.svg".format(name)
+        "flagImageUrl": "./{}.png".format(name),
+        "flagSvgUrl": "./{}.svg".format(name)
     })
 
 dirname = os.path.dirname(__file__)

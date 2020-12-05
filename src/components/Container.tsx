@@ -7,6 +7,7 @@ import { ImageItem } from "models/ImageItem";
 
 import styles from "./container.scss";
 import Loader from "react-loader-spinner";
+import { Country } from "models/Country";
 
 type Props = {
 }
@@ -15,23 +16,26 @@ const Container: FunctionComponent<Props> = ({
 }) => {
     const [{
         items,
+        tags,
         page,
         prevY,
         isLoading
     }, setState] = useState<{
-        items: ImageItem[];
-        page: string;
+        items: Country[];
+        tags: string[];
+        page: number;
         prevY: number;
         isLoading: boolean;
     }>({
         items: [],
-        page: "",
+        tags: [],
+        page: 0,
         prevY: 0,
         isLoading: true,
     });
     
     useEffect(() => {
-        getFlags({page})
+        getFlags({tags, page})
             .then(result => {
                 setState(state => ({
                     ...state,
@@ -48,17 +52,16 @@ const Container: FunctionComponent<Props> = ({
       };
 
 
-    const handleObserver = (entities, observer) => {
-        const y = entities[0].boundingClientRect.y;
+    const handleObserver = (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
+        const y = entries[0].boundingClientRect.y;
 
         if (prevY > y) {
-            const lastItem = items[items.length - 1];
-            const curPage = lastItem.id;
-            getFlags({page})
-            setState({ page: curPage });
+            const newPage = page + 1;
+            getFlags({tags, page: newPage})
+            setState(state => ({ ...state, page: newPage }));
         }
 
-        setState({ prevY: y });
+        setState(state => ({ ...state, prevY: y }));
     }
 
     const observer = new IntersectionObserver(
@@ -67,11 +70,11 @@ const Container: FunctionComponent<Props> = ({
     );
 
     return <div className={styles.container}>
-        {items.map(pr => <div key={pr.id} className={styles.item}>
+        {items.map(pr => <div key={pr["iso3166-1-alpha-2"]} className={styles.item}>
             <div
                 className={styles.itemChild}
                 style={{
-                    backgroundImage: `url(${pr.url})`,
+                    backgroundImage: `url(${pr.imageUrl})`,
                 }}>
                     <span>Test</span>
                 </div>

@@ -120,27 +120,90 @@
         ]
     },
     {
+        "iso3166-1-alpha-2": "by",
+        "tags": [
+            "Belarus",
+            "red",
+            "green",
+            "white",
+            "ornament pattern"
+        ]
+    },
+    {
         "iso3166-1-alpha-2": "fr",
-        "tags": []
+        "tags": [
+            "France",
+            "tricolour",
+            "three vertical bands",
+            "blue",
+            "white",
+            "red",
+            "vertical"
+        ]
     },
     {
         "iso3166-1-alpha-2": "pl",
-        "tags": []
+        "tags": [
+            "Poland",
+            "white",
+            "red"
+        ]
+    },
+    {
+        "iso3166-1-alpha-2": "pt",
+        "tags": [
+            "Portgual",
+            "red",
+            "green",
+            "Portuguese shield",
+            "coat of arms"
+        ]
     },
     {
         "iso3166-1-alpha-2": "ru",
-        "tags": []
+        "tags": [
+            "Russia",
+            "tricolor",
+            "horizontal",
+            "white",
+            "blue",
+            "red"
+        ]
     },
     {
-        "iso3166-1-alpha-2": "ph",
-        "tags": []
+        "iso3166-1-alpha-2": "ni",
+        "tags": [
+            "Nicaragua",
+            "blue",
+            "white",
+            "emblem",
+            "triangle",
+            "volcanoes",
+            "rising sun"
+        ]
     },
     {
         "iso3166-1-alpha-2": "mw",
-        "tags": []
+        "tags": [
+            "Malawi",
+            "black",
+            "red",
+            "green",
+            "rising sun"
+        ]
     },
     {
         "iso3166-1-alpha-2": "ms",
-        "tags": []
+        "tags": [
+            "Montserrat",
+            "blue",
+            "white",
+            "red",
+            "British Blue Ensign",
+            "Union Flag",
+            "coat of arms",
+            "Erin",
+            "golden harp"
+        ]
     }
 ]
