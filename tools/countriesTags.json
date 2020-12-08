@@ -205,5 +205,29 @@
             "Erin",
             "golden harp"
         ]
+    },
+    {
+        "iso3166-1-alpha-2": "lt",
+        "tags": [
+            "Lithuania",
+            "yellow",
+            "green",
+            "red",
+            "horizontal"
+        ]
+    },
+    {
+        "iso3166-1-alpha-2": "es",
+        "tags": [
+            "Spain",
+            "red",
+            "yellow",
+            "horizontal",
+            "coat of arms",
+            "the Royal Crown",
+            "the arms of the House of Bourbon",
+            "the Pillars of Hercules",
+            "Plus Ultra"
+        ]
     }
 ]

@@ -1,0 +1,14 @@
+.tag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tagLabel {
+    font-size: 20px;
+}
+
+.deleteIcon {
+    margin-left: 10px;
+    cursor: pointer;
+}

@@ -30,7 +30,7 @@ for row in rows:
     })
 
 dirname = os.path.dirname(__file__)
-filename = os.path.join(dirname, "result.json")
+filename = os.path.join(dirname, "data.json")
 
 with open(filename, "w") as outfile:
     json.dump(result, outfile)
