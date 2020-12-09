@@ -4,7 +4,7 @@ import { Route, Switch } from "react-router";
 import { faFlag, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Header from "components/Header";
-import { getFlags } from "api";
+import { getFlags, getSuggestions } from "api";
 import { ImageItem } from "models/ImageItem";
 import Container from "components/Container";
 
@@ -18,20 +18,10 @@ const App: FunctionComponent = () => {
 
     const onSearch = (value: string) => {
         setValue(value)
-        setSuggestions([
-            {
-                id: 1,
-                value: "coat of arms",
-            },
-            {
-                id: 2,
-                value: "yellow",
-            },
-            {
-                id: 3,
-                value: "the Royal Crown",
-            }
-        ]);
+
+        getSuggestions({value}).then(suggestions => {
+            setSuggestions(suggestions);
+        })
     }
 
     const onDelete = () => {

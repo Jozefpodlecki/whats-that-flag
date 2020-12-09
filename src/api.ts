@@ -2,7 +2,8 @@ import { Country } from "models/Country";
 import { ImageItem } from "models/ImageItem";
 import { Module } from "models/Module";
 import { resolve } from "path";
-import data from "./assets/data.json";
+import countries from "./assets/countries.json";
+import tags from "./assets/tags.json";
 
 const importAll = (context: __WebpackModuleApi.RequireContext) => {
     return context.keys()
@@ -24,18 +25,30 @@ const imagesContext = require.context(
 
 interface Criteria {
     page: number;
-    tags: string[];
+    tags?: string[];
+    value: string;
 }
 
 const flags = importAll(imagesContext);
 
-export const getFlags = ({ page }: Criteria) => new Promise<Country[]>((resolve, reject) => {
-    const entries = data as Country[];
+export const getSuggestions = ({
+    value,
+    page
+}: Criteria) => new Promise<Country[]>((resolve, reject) => {
+    
+    Object.entries(tags)
+        .filter(pr => pr[0].includes(value))
+}) 
+
+export const getFlags = ({ 
+    page
+ }: Criteria) => new Promise<Country[]>((resolve, reject) => {
+    const entries = countries as Country[];
 
     const pageSize = 5;
     const from = page * pageSize;
     const to = from + pageSize;
-    console.log(flags);
+    
     const result = entries
         .slice(from, to)
         .map(pr => ({

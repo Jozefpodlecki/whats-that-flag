@@ -229,5 +229,62 @@
             "the Pillars of Hercules",
             "Plus Ultra"
         ]
+    },
+    {
+        "iso3166-1-alpha-2": "bg",
+        "tags": [
+            "Bulgaria",
+            "white",
+            "green",
+            "red",
+            "horizontal",
+            "tricolour"
+        ]
+    },
+    {
+        "iso3166-1-alpha-2": "hu",
+        "tags": [
+            "Hungary",
+            "red",
+            "white",
+            "green",
+            "horizontal",
+            "tricolour"
+        ]
+    },
+    {
+        "iso3166-1-alpha-2": "sk",
+        "tags": [
+            "Slovakia",
+            "red",
+            "white",
+            "blue",
+            "horizontal",
+            "tricolour",
+            "coat of arms"
+        ]
+    },
+    {
+        "iso3166-1-alpha-2": "si",
+        "tags": [
+            "Slovenia",
+            "white",
+            "blue",
+            "red",
+            "horizontal",
+            "tricolour",
+            "coat of arms"
+        ]
+    },
+    {
+        "iso3166-1-alpha-2": "cz",
+        "tags": [
+            "Czech Republic",
+            "white",
+            "blue",
+            "red",
+            "triangle",
+            "tricolour"
+        ]
     }
 ]
