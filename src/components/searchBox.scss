@@ -1,3 +1,4 @@
+
 .searchBox {
     margin-top: 10px;
     display: flex;
@@ -16,20 +17,48 @@
     margin: 0;
     margin-top: 60px;
     list-style-type: none;
+    background: black;
+    display: none;
+    width: 620px;
+}
+
+.active {
+    display: block;
 }
 
 .suggestion {
     cursor: pointer;
     padding: 10px;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.suggestionIcon {
+    margin-right: 15px;
+}
+
+.tagLabel {
+    font-size: 30px;
+}
+
+.filter {
+    margin-left: 10px;
+    font-size: 25px;
 }
 
 .input {
     border: none;
     padding: 10px;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid lightgray;
     width: 600px;
-    text-align: center;
-    font-size: 20px;
+    font-size: 30px;
+    color: white;
+    background: transparent;
+
+    &::placeholder {
+        color: lightgray;
+    }
 
     &:focus {
         outline: none;

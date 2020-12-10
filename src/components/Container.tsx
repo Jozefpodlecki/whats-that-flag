@@ -8,26 +8,27 @@ import { ImageItem } from "models/ImageItem";
 import styles from "./container.scss";
 import Loader from "react-loader-spinner";
 import { Country } from "models/Country";
+import Item from "./Item";
+
 
 type Props = {
+    items: any[]
 }
 
 const Container: FunctionComponent<Props> = ({
+    items,
 }) => {
     const [{
-        items,
         tags,
         page,
         prevY,
         isLoading
     }, setState] = useState<{
-        items: Country[];
         tags: string[];
         page: number;
         prevY: number;
         isLoading: boolean;
     }>({
-        items: [],
         tags: [],
         page: 0,
         prevY: 0,
@@ -35,14 +36,7 @@ const Container: FunctionComponent<Props> = ({
     });
     
     useEffect(() => {
-        getFlags({tags, page})
-            .then(result => {
-                setState(state => ({
-                    ...state,
-                    items: result.slice(0, 5),
-                    isLoading: false,
-                }));
-            })
+        
     }, []);
     
     const options = {
@@ -52,34 +46,29 @@ const Container: FunctionComponent<Props> = ({
       };
 
 
-    const handleObserver = (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
-        const y = entries[0].boundingClientRect.y;
+    // const handleObserver = (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
+    //     const y = entries[0].boundingClientRect.y;
 
-        if (prevY > y) {
-            const newPage = page + 1;
-            getFlags({tags, page: newPage})
-            setState(state => ({ ...state, page: newPage }));
-        }
+    //     if (prevY > y) {
+    //         const newPage = page + 1;
+    //         getFlags({
+    //             tags, 
+    //             page: 0
+    //         })
+    //         setState(state => ({ ...state, page: newPage }));
+    //     }
 
-        setState(state => ({ ...state, prevY: y }));
-    }
+    //     setState(state => ({ ...state, prevY: y }));
+    // }
 
-    const observer = new IntersectionObserver(
-        handleObserver,
-        options
-    );
+    // const observer = new IntersectionObserver(
+    //     handleObserver,
+    //     options
+    // );
 
     return <div className={styles.container}>
-        {items.map(pr => <div key={pr["iso3166-1-alpha-2"]} className={styles.item}>
-            <div
-                className={styles.itemChild}
-                style={{
-                    backgroundImage: `url(${pr.imageUrl})`,
-                }}>
-                    <span>Test</span>
-                </div>
-        </div>)}
-        {isLoading ? <Loader type="ThreeDots" color="#00BFFF" height={80} width={80} /> : null}
+        {items.map(item => <Item key={item.countryName} {...item}/>)}
+        {/* {isLoading ? <Loader type="ThreeDots" color="#00BFFF" height={80} width={80} /> : null} */}
     </div>
 }
 

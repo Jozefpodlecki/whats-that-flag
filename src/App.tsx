@@ -1,7 +1,7 @@
 import SearchBox from "components/SearchBox";
 import React, { ChangeEvent, FunctionComponent, useEffect, useState } from "react";
 import { Route, Switch } from "react-router";
-import { faFlag, faTimes } from '@fortawesome/free-solid-svg-icons'
+import { faFlag, faTags, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Header from "components/Header";
 import { getFlags, getSuggestions } from "api";
@@ -9,60 +9,84 @@ import { ImageItem } from "models/ImageItem";
 import Container from "components/Container";
 
 import styles from "./app.scss";
+import TagList from "components/TagList";
 
 const App: FunctionComponent = () => {
-    const [value, setValue] = useState("");
+    const [{
+        value,
+        items,
+        tags,
+    }, setState] = useState({
+        value: "",
+        items: [],
+        tags: []
+    });
     const [suggestions, setSuggestions] = useState([]);
-    const [suggestions1, setSuggestions1] = useState([]);
-    
+
+    useEffect(() => {
+        getFlags({
+            tags,
+            page: 0,
+        })
+        .then(result => {
+            setState(state => ({
+                ...state,
+                items: result.slice(0, 5),
+            }));
+        })
+    }, [tags])
 
     const onSearch = (value: string) => {
-        setValue(value)
+        setState(state => ({...state, value}));
 
-        getSuggestions({value}).then(suggestions => {
+        getSuggestions({
+            value,
+            page: 0,
+            excludeTags: tags,
+        }).then(suggestions => {
             setSuggestions(suggestions);
         })
     }
 
-    const onDelete = () => {
-        
+    const onDelete = (id: string) => {
+        setState(state => ({
+            ...state,
+            value: "",
+            tags: state.tags.filter(pr => pr !== id)
+        }));
     }
 
-    const onSuggestionClick = (value: any) => {
-        setSuggestions1([
-            {
-                id: 1,
-                value: "coat of arms",
-            },
-            {
-                id: 2,
-                value: "yellow",
-            },
-            {
-                id: 3,
-                value: "the Royal Crown",
-            }
-        ]);
+    const onFilter = () => {
+
     }
 
-    return <div>
+    const onSuggestionClick = (value: string) => {
+        setState(state => ({
+            ...state,
+            value: "",
+            tags: [...state.tags, value]
+        }));
+    }
+
+    return <div className={styles.container}>
         <Header/>
-        <SearchBox
-            value={value}
-            onSearch={onSearch}
-            onSuggestionClick={onSuggestionClick}
-            suggestions={suggestions}/>
-        <div>
-            {suggestions1.map(pr => 
-            <div className={styles.tag}>
-                <div className={styles.tagLabel}>{pr.value}</div>
-                <div className={styles.deleteIcon} onClick={onDelete}>
-                    <FontAwesomeIcon icon={faTimes} size="2x"/>
-                </div>
+        <div className={styles.container1}>
+            <div>
+                <SearchBox
+                    value={value}
+                    onSearch={onSearch}
+                    onSuggestionClick={onSuggestionClick}
+                    onFilter={onFilter}
+                    suggestions={suggestions}/>
+                <TagList
+                    tags={tags}
+                    onDelete={onDelete}
+                />
             </div>
-        )}
         </div>
-        <Container/>
+        <Container
+            items={items}
+        />
     </div>
 };
 

@@ -1,0 +1,86 @@
+[
+    {
+        "value": "red",
+        "type": "color"
+    },
+    {
+        "value": "red",
+        "type": "color"
+    },
+    {
+        "value": "blue",
+        "type": "color"
+    },
+    {
+        "value": "black",
+        "type": "color"
+    },
+    {
+        "value": "white",
+        "type": "color"
+    },
+    {
+        "value": "Taegukgi",
+        "type": "color"
+    },
+    {
+        "value": "Asia",
+        "type": "area"
+    },
+    {
+        "value": "circle",
+        "type": "shape"
+    },
+    {
+        "value": "South Korea",
+        "type": "area"
+    },
+    {
+        "value": "red",
+        "type": "color"
+    },
+    {
+        "value": "gold",
+        "type": "color"
+    },
+    {
+        "value": "tricolor",
+        "type": "color"
+    },
+    {
+        "value": "Europe",
+        "type": "area"
+    },
+    {
+        "value": "Germany",
+        "type": "area"
+    },
+    {
+        "value": "green",
+        "type": "color"
+    },
+    {
+        "value": "yellow",
+        "type": "color"
+    },
+    {
+        "value": "triangle",
+        "type": "shape"
+    },
+    {
+        "value": "five-pointed star",
+        "type": "shape"
+    },
+    {
+        "value": "star",
+        "type": "shape"
+    },
+    {
+        "value": "East Timor",
+        "type": "name"
+    },
+    {
+        "value": "Timor Leste",
+        "type": "name"
+    }
+]
