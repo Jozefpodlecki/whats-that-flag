@@ -45,7 +45,7 @@ export const getSuggestions = ({
     const result = Object.keys(_tags)
         .filter(pr => !excludeTags.includes(pr) && pr.includes(value))
         .slice(from, to)
-        console.log(value, result)
+
     resolve(result);
 }) 
 
@@ -74,7 +74,7 @@ export const getFlags = ({
         .slice(from, to)
         .map(pr => ({
             ...pr,
-            imageUrl: flags[pr.imageUrl],
+            imageUrl: flags[pr.countryName],
         }))
 
     resolve(result)

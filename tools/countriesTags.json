@@ -287,5 +287,90 @@
             "triangle",
             "tricolour"
         ]
+    },
+    {
+        "iso3166-1-alpha-2": "dk",
+        "tags": [
+            "Denmark",
+            "red",
+            "white",
+            "Scandinavian cross",
+            "Nordic cross"
+        ]
+    },
+    {
+        "iso3166-1-alpha-2": "no",
+        "tags": [
+            "Norway",
+            "red",
+            "white",
+            "blue",
+            "Scandinavian cross",
+            "Nordic cross"
+        ]
+    },
+    {
+        "iso3166-1-alpha-2": "fi",
+        "tags": [
+            "Finland",
+            "white",
+            "blue",
+            "Scandinavian cross",
+            "Nordic cross"
+        ]
+    },
+    {
+        "iso3166-1-alpha-2": "ee",
+        "tags": [
+            "Estonia",
+            "white",
+            "black",
+            "blue",
+            "tricolour",
+            "horizontal"
+        ]
+    },
+    {
+        "iso3166-1-alpha-2": "se",
+        "tags": [
+            "Sweden",
+            "yellow",
+            "blue",
+            "Scandinavian cross",
+            "Nordic cross"
+        ]
+    },
+    {
+        "iso3166-1-alpha-2": "np",
+        "tags": [
+            "Nepal",
+            "non-quadrilateral",
+            "blue",
+            "red",
+            "white",
+            "rhododendron",
+            "sun",
+            "crescent moon"
+        ]
+    },
+    {
+        "iso3166-1-alpha-2": "sg",
+        "tags": [
+            "Singapore",
+            "red",
+            "white",
+            "crescent moon",
+            "five pointed star"
+        ]
+    },
+    {
+        "iso3166-1-alpha-2": "il",
+        "tags": [
+            "Israel",
+            "blue",
+            "white",
+            "hexagram",
+            "Star of David"
+        ]
     }
 ]
