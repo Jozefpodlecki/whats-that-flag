@@ -1,6 +1,6 @@
 import { faFlag } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { ChangeEvent, FunctionComponent, useEffect, useState } from "react";
+import React, { ChangeEvent, FunctionComponent, useEffect, useRef, useState } from "react";
 import { getFlags } from "api";
 import { ImageItem } from "models/ImageItem";
 
@@ -12,32 +12,17 @@ import Item from "./Item";
 
 
 type Props = {
-    items: any[]
+    items: Country[];
+    isLoading: boolean;
+    onPageEnd(): void;
 }
 
 const Container: FunctionComponent<Props> = ({
     items,
+    isLoading,
+    onPageEnd,
 }) => {
-    const [{
-        tags,
-        page,
-        prevY,
-        isLoading
-    }, setState] = useState<{
-        tags: string[];
-        page: number;
-        prevY: number;
-        isLoading: boolean;
-    }>({
-        tags: [],
-        page: 0,
-        prevY: 0,
-        isLoading: true,
-    });
-    
-    useEffect(() => {
-        
-    }, []);
+    const loaderRef = useRef<HTMLDivElement>();
     
     const options = {
         root: null as any,
@@ -45,30 +30,39 @@ const Container: FunctionComponent<Props> = ({
         threshold: 1.0
       };
 
+    const onClick = () => {
 
-    // const handleObserver = (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
-    //     const y = entries[0].boundingClientRect.y;
+    }
 
-    //     if (prevY > y) {
-    //         const newPage = page + 1;
-    //         getFlags({
-    //             tags, 
-    //             page: 0
-    //         })
-    //         setState(state => ({ ...state, page: newPage }));
-    //     }
+    useEffect(() => {
+        const handleObserver = (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
+            const [entry] = entries;
+    
+            if(entry.isIntersecting) {
+                onPageEnd();
+            }
+        }
+    
+        const observer = new IntersectionObserver(
+            handleObserver,
+            options
+        );
 
-    //     setState(state => ({ ...state, prevY: y }));
-    // }
+        observer.observe(loaderRef.current)
 
-    // const observer = new IntersectionObserver(
-    //     handleObserver,
-    //     options
-    // );
+        return () => {
+            observer.disconnect();
+        }
+
+    }, [loaderRef])
 
     return <div className={styles.container}>
-        {items.map(item => <Item key={item.countryName} {...item}/>)}
-        {/* {isLoading ? <Loader type="ThreeDots" color="#00BFFF" height={80} width={80} /> : null} */}
+        <div className={styles.list}>
+            {items.map(item => <Item onClick={onClick} key={item.countryName} {...item}/>)}
+        </div>
+        <div ref={loaderRef} className={styles.loader}>
+            {isLoading ? <Loader type="ThreeDots" color="white" height={80} width={80} /> : null}
+        </div>
     </div>
 }
 

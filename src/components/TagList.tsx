@@ -1,12 +1,14 @@
 import { faTags, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { tagTypeToIcon } from "appUtils";
+import { Tag } from "models/Tag";
 import React, { ChangeEvent, FunctionComponent, useCallback, useEffect, useState } from "react";
 
 import styles from "./tagList.scss";
 
 type Props = {
-    tags: any[],
-    onDelete(id: string): void;
+    tags: Tag[],
+    onDelete(id: number): void;
 }
 
 const TagList: FunctionComponent<Props> = ({
@@ -15,7 +17,7 @@ const TagList: FunctionComponent<Props> = ({
 }) => {
    
     const _onDelete = useCallback((event: React.MouseEvent<HTMLElement>) => {
-        const id = event.currentTarget.dataset.id;
+        const id = Number(event.currentTarget.dataset.id);
         onDelete(id);
     }, []);
 
@@ -24,10 +26,16 @@ const TagList: FunctionComponent<Props> = ({
             <FontAwesomeIcon icon={faTags} size="1x"/>
         </div> : null}
         {tags.map(pr => 
-        <div key={pr} className={styles.item}>
-            <div className={styles.label}>{pr}</div>
+        <div key={pr.id} className={styles.item}>
+            <div className={styles.itemContent}>
+                <div className={styles.tagIcon}>
+                    <FontAwesomeIcon icon={tagTypeToIcon(pr.type)}/>
+                </div>
+                <div className={styles.label}>{pr.name}</div>
+            </div>
+            
             <div
-                data-id={pr}
+                data-id={pr.id}
                 className={styles.deleteIcon}
                 onClick={_onDelete}>
                 <FontAwesomeIcon icon={faTimes} size="1x"/>

@@ -372,5 +372,101 @@
             "hexagram",
             "Star of David"
         ]
+    },
+    {
+        "iso3166-1-alpha-2": "aw",
+        "tags": [
+            "Aruba",
+            "light blue",
+            "yellow",
+            "red",
+            "white",
+            "stripes",
+            "four pointed star"
+        ]
+    },
+    {
+        "iso3166-1-alpha-2": "az",
+        "tags": [
+            "Azerbaijan",
+            "horizontal",
+            "tricolour",
+            "bright blue",
+            "red",
+            "green",
+            "white crescent",
+            "eight pointed star"
+        ]
+    },
+    {
+        "iso3166-1-alpha-2": "tk",
+        "tags": [
+            "Tokelau",
+            "blue",
+            "yellow",
+            "five pointed star"
+        ]
+    },
+    {
+        "iso3166-1-alpha-2": "zm",
+        "tags": [
+            "Zambia",
+            "green",
+            "red",
+            "black",
+            "orange",
+            "bird",
+            "African fish eagle"
+        ]
+    },
+    {
+        "iso3166-1-alpha-2": "zw",
+        "tags": [
+            "Zimbabwe",
+            "Africa",
+            "horizontal",
+            "soapstone bird",
+            "yellow",
+            "green",
+            "red",
+            "black",
+            "white",
+            "five pointed star"
+        ]
+    },
+    {
+        "iso3166-1-alpha-2": "yt",
+        "tags": [
+            "Mayotte",
+            "France",
+            "tricolour",
+            "three vertical bands",
+            "blue",
+            "white",
+            "red",
+            "vertical"
+        ]
+    },
+    {
+        "iso3166-1-alpha-2": "ye",
+        "tags": [
+            "Yemen",
+            "tricolour",
+            "three vertical bands",
+            "red",
+            "white",
+            "black"
+        ]
+    },
+    {
+        "iso3166-1-alpha-2": "ws",
+        "tags": [
+            "Samoa",
+            "tricolour",
+            "red",
+            "blue",
+            "white",
+            "five pointed star"
+        ]
     }
 ]

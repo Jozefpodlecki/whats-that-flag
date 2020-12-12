@@ -1,24 +1,8 @@
-.container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    height: 700px;
+.list {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.itemChild {
-    width: 100%;
-    height: 100%;
-    background-size: contain;
-    background-repeat: no-repeat;
-    transition: transform .5s;
-    cursor: pointer;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.loader {
+    text-align: center;
 }

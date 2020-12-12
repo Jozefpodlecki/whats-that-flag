@@ -1,5 +1,5 @@
 import SearchBox from "components/SearchBox";
-import React, { ChangeEvent, FunctionComponent, useEffect, useState } from "react";
+import React, { ChangeEvent, FunctionComponent, useCallback, useEffect, useState } from "react";
 import { Route, Switch } from "react-router";
 import { faFlag, faTags, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,16 +10,36 @@ import Container from "components/Container";
 
 import styles from "./app.scss";
 import TagList from "components/TagList";
+import { Country } from "models/Country";
+import { Tag } from "models/Tag";
+
+type State = {
+    value: string;
+    items: Country[];
+    tags: Tag[];
+    page: number;
+    fetchNextPage: boolean;
+    isLoading: boolean;
+    hasMoreItems: boolean;
+}
 
 const App: FunctionComponent = () => {
     const [{
         value,
         items,
         tags,
-    }, setState] = useState({
+        page,
+        fetchNextPage,
+        isLoading,
+        hasMoreItems,
+    }, setState] = useState<State>({
         value: "",
         items: [],
-        tags: []
+        tags: [],
+        page: 0,
+        fetchNextPage: false,
+        isLoading: true,
+        hasMoreItems: true,
     });
     const [suggestions, setSuggestions] = useState([]);
 
@@ -27,14 +47,44 @@ const App: FunctionComponent = () => {
         getFlags({
             tags,
             page: 0,
+            pageSize: 6,
         })
-        .then(result => {
+        .then(items => {
             setState(state => ({
                 ...state,
-                items: result.slice(0, 5),
+                items,
+                hasMoreItems: !!items.length,
             }));
         })
     }, [tags])
+
+    useEffect(() => {
+
+        if(!hasMoreItems) {
+            setState(state => ({
+                ...state,
+                isLoading: false,
+            }));
+        }
+
+        if(hasMoreItems && fetchNextPage) {
+            getFlags({
+                tags,
+                page: page + 1,
+                pageSize: 6,
+            })
+            .then(items => {
+                setState(state => ({
+                    ...state,
+                    page: state.page + 1,
+                    items: [...state.items, ...items],
+                    fetchNextPage: false,
+                    isLoading: false,
+                    hasMoreItems: !!items.length,
+                }));
+            })
+        }
+    }, [fetchNextPage, hasMoreItems]);
 
     const onSearch = (value: string) => {
         setState(state => ({...state, value}));
@@ -42,29 +92,38 @@ const App: FunctionComponent = () => {
         getSuggestions({
             value,
             page: 0,
+            pageSize: 5,
             excludeTags: tags,
         }).then(suggestions => {
             setSuggestions(suggestions);
         })
     }
 
-    const onDelete = (id: string) => {
+    const onDelete = (id: number) => {
         setState(state => ({
             ...state,
             value: "",
-            tags: state.tags.filter(pr => pr !== id)
+            tags: state.tags.filter(pr => pr.id !== id)
         }));
     }
 
     const onFilter = () => {
-
     }
 
-    const onSuggestionClick = (value: string) => {
+    const onPageEnd = useCallback(() => 
+        setState(state => ({...state, 
+            isLoading: true,
+            fetchNextPage: true
+        })), 
+    [tags, page])
+
+    const onSuggestionClick = (id: number) => {
+        const tag = suggestions.find(pr => pr.id === id);
+
         setState(state => ({
             ...state,
             value: "",
-            tags: [...state.tags, value]
+            tags: [...state.tags, tag]
         }));
     }
 
@@ -85,6 +144,8 @@ const App: FunctionComponent = () => {
             </div>
         </div>
         <Container
+            onPageEnd={onPageEnd}
+            isLoading={isLoading}
             items={items}
         />
     </div>

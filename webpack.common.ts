@@ -30,7 +30,7 @@ const config: Configuration = {
                 loader: "ts-loader"
             },
             {
-                test: /\.(png|jpe?g|gif|mp3)$/i,
+                test: /\.(svg|png|jpe?g|gif|mp3)$/i,
                 use: [
                     {
                         loader: "file-loader",

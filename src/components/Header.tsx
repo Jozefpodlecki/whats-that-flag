@@ -1,3 +1,4 @@
+import { faGit, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faFlag } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { ChangeEvent, FunctionComponent } from "react";
@@ -12,8 +13,15 @@ const Header: FunctionComponent<Props> = ({
 
 
     return <header className={styles.header}>
-        <span>Whats that </span>
-        <FontAwesomeIcon icon={faFlag} inverse/>
+        <div className={styles.logo}>
+            <span>Whats that </span>
+            <FontAwesomeIcon icon={faFlag} inverse/>
+        </div>
+        <div className={styles.github}>
+            <a className={styles.githubLink} href={process.env.githubLink}>
+                <FontAwesomeIcon icon={faGithub}/>
+            </a>
+        </div>
     </header>
 }
 

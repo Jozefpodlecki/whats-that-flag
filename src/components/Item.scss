@@ -1,0 +1,27 @@
+
+.item {
+    flex: 0 0 33%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    cursor: pointer;
+}
+
+.backgroundWrapper {
+    position: absolute;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.background {
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all .4s;
+}
+
+.text {
+    font-size: 30px;
+    transition: opacity .4s;
+}

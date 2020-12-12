@@ -1,6 +1,7 @@
 import { Country } from "models/Country";
 import { ImageItem } from "models/ImageItem";
 import { Module } from "models/Module";
+import { Tag } from "models/Tag";
 import { resolve } from "path";
 import countries from "./assets/countries.json";
 import _tags from "./assets/tags.json";
@@ -16,65 +17,85 @@ const importAll = (context: __WebpackModuleApi.RequireContext) => {
         }, {} as Record<string, string>);
 };
 
-const imagesContext = require.context(
+const flagContext = require.context(
     "./assets/images/flags",
     false,
     /\.(png|jpe?g|svg)$/,
     "sync"
 );
 
+const svgContext = require.context(
+    "./assets/svgs",
+    false,
+    /\.svg$/,
+    "sync"
+);
+
 interface SuggestionsCriteria {
     page: number;
-    tags?: string[];
-    excludeTags: string[];
+    pageSize: number;
+    excludeTags: Tag[];
     value?: string;
 }
 
-const flags = importAll(imagesContext);
+const flags = importAll(flagContext);
+const svgs = importAll(svgContext);
 
 export const getSuggestions = ({
     value,
     page,
+    pageSize,
     excludeTags,
-}: SuggestionsCriteria) => new Promise<string[]>((resolve, reject) => {
+}: SuggestionsCriteria) => new Promise<Tag[]>((resolve, reject) => {
     
-    const pageSize = 5;
     const from = page * pageSize;
     const to = from + pageSize;
 
-    const result = Object.keys(_tags)
-        .filter(pr => !excludeTags.includes(pr) && pr.includes(value))
-        .slice(from, to)
+    const result = _tags
+        .filter(pr => pr.name.toLowerCase().includes(value.toLowerCase())
+            && !excludeTags.some(npr => npr.id === pr.id) )
+        .slice(from, to) as Tag[];
 
     resolve(result);
 }) 
 
 interface FlagsCriteria {
     page: number;
-    tags?: string[];
+    pageSize: number;
+    tags: Tag[];
     value?: string;
 }
 
 export const getFlags = ({ 
     page,
-    tags
+    pageSize,
+    tags,
  }: FlagsCriteria) => new Promise<Country[]>((resolve, reject) => {
     const entries = countries as Country[];
-
-    const pageSize = 5;
+    
     const from = page * pageSize;
     const to = from + pageSize;
-
-    const re = tags
-        .map((pr: keyof typeof _tags) => _tags[pr])
     
-        console.log(re);
+    const tagsCombined = tags.flatMap((pr: Tag) => pr.countries)
 
-    const result = entries
-        .slice(from, to)
+    const tagMatchesPerCountry = tagsCombined.reduce<Record<string, number>>((acc, value) => {
+        acc[value] = acc[value] || 0;
+        acc[value]++;
+
+        return acc;
+    }, {});
+    
+    let result = entries;
+
+    if(Object.keys(tagMatchesPerCountry).length) {
+        result = result.filter(pr => tagMatchesPerCountry[pr["iso3166-1-alpha-2"]] === tags.length);
+    }
+
+    result = result.slice(from, to)
         .map(pr => ({
             ...pr,
-            imageUrl: flags[pr.countryName],
+            flagImageUrl: flags[pr.flagImageUrl],
+            flagSvgUrl: svgs[pr.flagSvgUrl],
         }))
 
     resolve(result)

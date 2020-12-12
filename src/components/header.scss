@@ -1,5 +1,24 @@
 .header {
-    text-align: center;
+    display: flex;
     padding: 20px;
     font-size: 40px;
+}
+
+.logo {
+    text-align: center;
+    flex: 1;
+}
+
+.github {
+    margin-left: auto;
+    
+}
+
+.githubLink {
+    color: white;
+    transition: color .4s;
+
+    &:hover {
+        color: gray;
+    }
 }
