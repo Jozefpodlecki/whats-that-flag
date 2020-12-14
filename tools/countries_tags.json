@@ -468,5 +468,62 @@
             "white",
             "five pointed star"
         ]
+    },
+    {
+        "iso3166-1-alpha-2": "ie",
+        "tags": [
+            "Ireland",
+            "tricolour",
+            "vertical",
+            "green",
+            "white",
+            "orange"
+        ]
+    },
+    {
+        "iso3166-1-alpha-2": "pa",
+        "tags": [
+            "Panama",
+            "white",
+            "red",
+            "blue",
+            "five pointed star"
+        ]
+    },
+    {
+        "iso3166-1-alpha-2": "ir",
+        "tags": [
+            "Iran",
+            "tricolour",
+            "horizontal",
+            "green",
+            "white",
+            "red",
+            "national emblem",
+            "Allah",
+            "takbir"
+        ]
+    },
+    {
+        "iso3166-1-alpha-2": "om",
+        "tags": [
+            "Oman",
+            "tricolour",
+            "horizontal",
+            "green",
+            "white",
+            "red",
+            "national emblem",
+            "Khanjar Bo Sayfain"
+        ]
+    },
+    {
+        "iso3166-1-alpha-2": "pe",
+        "tags": [
+            "Peru",
+            "vertical",
+            "white",
+            "red"
+        ]
     }
 ]
