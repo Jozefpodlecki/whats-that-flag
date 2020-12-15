@@ -521,9 +521,74 @@
         "iso3166-1-alpha-2": "pe",
         "tags": [
             "Peru",
+            "America",
+            "South America",
             "vertical",
             "white",
             "red"
+        ]
+    },
+    {
+        "iso3166-1-alpha-2": "cl",
+        "tags": [
+            "Chile",
+            "America",
+            "South America",
+            "horizontal",
+            "white",
+            "red",
+            "blue"
+        ]
+    },
+    {
+        "iso3166-1-alpha-2": "ar",
+        "tags": [
+            "Argentina",
+            "America",
+            "South America",
+            "horizontal",
+            "white",
+            "blue",
+            "Sun of May"
+        ]
+    },
+    {
+        "iso3166-1-alpha-2": "ec",
+        "tags": [
+            "Ecuador",
+            "America",
+            "South America",
+            "horizontal",
+            "yellow",
+            "blue",
+            "red"
+        ]
+    },
+    {
+        "iso3166-1-alpha-2": "co",
+        "tags": [
+            "Colombia",
+            "America",
+            "South America",
+            "horizontal",
+            "tricolour",
+            "yellow",
+            "blue",
+            "red"
+        ]
+    },
+    {
+        "iso3166-1-alpha-2": "ve",
+        "tags": [
+            "Venezuela",
+            "America",
+            "South America",
+            "horizontal",
+            "tricolour",
+            "yellow",
+            "blue",
+            "red",
+            "five pointed star"
         ]
     }
 ]
