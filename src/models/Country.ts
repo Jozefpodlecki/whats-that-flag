@@ -4,4 +4,5 @@ export interface Country {
     tags: string[];
     flagImageUrl: string;
     flagSvgUrl: string;
+    mapUrl: string;
 }

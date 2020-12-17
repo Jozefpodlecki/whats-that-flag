@@ -5,7 +5,7 @@
         ],
         "id": 0,
         "name": "Taegukgi",
-        "type": "color"
+        "type": "place"
     },
     {
         "countries": [
@@ -47,7 +47,13 @@
             "zw",
             "yt",
             "ye",
-            "ws"
+            "ws",
+            "ie",
+            "pa",
+            "ir",
+            "om",
+            "pe",
+            "ar"
         ],
         "id": 2,
         "name": "white",
@@ -95,7 +101,14 @@
             "zw",
             "yt",
             "ye",
-            "ws"
+            "ws",
+            "pa",
+            "ir",
+            "om",
+            "pe",
+            "ec",
+            "co",
+            "ve"
         ],
         "id": 4,
         "name": "red",
@@ -122,7 +135,12 @@
             "il",
             "tk",
             "yt",
-            "ws"
+            "ws",
+            "pa",
+            "ar",
+            "ec",
+            "co",
+            "ve"
         ],
         "id": 5,
         "name": "blue",
@@ -196,7 +214,10 @@
             "se",
             "aw",
             "tk",
-            "zw"
+            "zw",
+            "ec",
+            "co",
+            "ve"
         ],
         "id": 12,
         "name": "yellow",
@@ -403,7 +424,10 @@
             "hu",
             "az",
             "zm",
-            "zw"
+            "zw",
+            "ie",
+            "ir",
+            "om"
         ],
         "id": 35,
         "name": "green",
@@ -413,7 +437,9 @@
         "countries": [
             "it",
             "fr",
-            "yt"
+            "yt",
+            "ie",
+            "pe"
         ],
         "id": 36,
         "name": "vertical",
@@ -456,7 +482,12 @@
             "az",
             "yt",
             "ye",
-            "ws"
+            "ws",
+            "ie",
+            "ir",
+            "om",
+            "co",
+            "ve"
         ],
         "id": 40,
         "name": "tricolour",
@@ -527,7 +558,14 @@
             "si",
             "ee",
             "az",
-            "zw"
+            "zw",
+            "ir",
+            "om",
+            "cl",
+            "ar",
+            "ec",
+            "co",
+            "ve"
         ],
         "id": 47,
         "name": "horizontal",
@@ -810,7 +848,9 @@
             "sg",
             "tk",
             "zw",
-            "ws"
+            "ws",
+            "pa",
+            "ve"
         ],
         "id": 81,
         "name": "five pointed star",
@@ -922,7 +962,8 @@
     },
     {
         "countries": [
-            "zm"
+            "zm",
+            "ie"
         ],
         "id": 95,
         "name": "orange",
@@ -990,6 +1031,153 @@
         ],
         "id": 103,
         "name": "Samoa",
+        "type": "unknown"
+    },
+    {
+        "countries": [
+            "ie"
+        ],
+        "id": 104,
+        "name": "Ireland",
+        "type": "unknown"
+    },
+    {
+        "countries": [
+            "pa"
+        ],
+        "id": 105,
+        "name": "Panama",
+        "type": "unknown"
+    },
+    {
+        "countries": [
+            "ir"
+        ],
+        "id": 106,
+        "name": "Iran",
+        "type": "unknown"
+    },
+    {
+        "countries": [
+            "ir",
+            "om"
+        ],
+        "id": 107,
+        "name": "national emblem",
+        "type": "unknown"
+    },
+    {
+        "countries": [
+            "ir"
+        ],
+        "id": 108,
+        "name": "Allah",
+        "type": "unknown"
+    },
+    {
+        "countries": [
+            "ir"
+        ],
+        "id": 109,
+        "name": "takbir",
+        "type": "unknown"
+    },
+    {
+        "countries": [
+            "om"
+        ],
+        "id": 110,
+        "name": "Oman",
+        "type": "unknown"
+    },
+    {
+        "countries": [
+            "om"
+        ],
+        "id": 111,
+        "name": "Khanjar Bo Sayfain",
+        "type": "unknown"
+    },
+    {
+        "countries": [
+            "pe"
+        ],
+        "id": 112,
+        "name": "Peru",
+        "type": "unknown"
+    },
+    {
+        "countries": [
+            "pe",
+            "cl",
+            "ar",
+            "ec",
+            "co",
+            "ve"
+        ],
+        "id": 113,
+        "name": "America",
+        "type": "unknown"
+    },
+    {
+        "countries": [
+            "pe",
+            "cl",
+            "ar",
+            "ec",
+            "co",
+            "ve"
+        ],
+        "id": 114,
+        "name": "South America",
+        "type": "unknown"
+    },
+    {
+        "countries": [
+            "cl"
+        ],
+        "id": 115,
+        "name": "Chile",
+        "type": "unknown"
+    },
+    {
+        "countries": [
+            "ar"
+        ],
+        "id": 116,
+        "name": "Argentina",
+        "type": "unknown"
+    },
+    {
+        "countries": [
+            "ar"
+        ],
+        "id": 117,
+        "name": "Sun of May",
+        "type": "unknown"
+    },
+    {
+        "countries": [
+            "ec"
+        ],
+        "id": 118,
+        "name": "Ecuador",
+        "type": "unknown"
+    },
+    {
+        "countries": [
+            "co"
+        ],
+        "id": 119,
+        "name": "Colombia",
+        "type": "unknown"
+    },
+    {
+        "countries": [
+            "ve"
+        ],
+        "id": 120,
+        "name": "Venezuela",
         "type": "unknown"
     }
 ]

@@ -26,7 +26,8 @@ for row in rows:
         "countryName": country,
         "tags": [],
         "flagImageUrl": "./{}.png".format(name),
-        "flagSvgUrl": "./{}.svg".format(name)
+        "flagSvgUrl": "./{}.svg".format(name),
+        "mapUrl": "./{}.svg".format(name)
     })
 
 dirname = os.path.dirname(__file__)

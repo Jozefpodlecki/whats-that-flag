@@ -41,7 +41,7 @@ const Item: FunctionComponent<Props> = ({
                 opacity: 1,
             }))
         };
-        image.src = flagSvgUrl;
+        image.src = flagImageUrl;
         
     }, [])
 
@@ -67,7 +67,7 @@ const Item: FunctionComponent<Props> = ({
                     opacity: 1,
                 }))
             };
-            image.src = flagSvgUrl;
+            image.src = flagImageUrl;
         }
 
         window.addEventListener("resize", onResize)

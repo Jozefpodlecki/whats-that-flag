@@ -17,6 +17,17 @@ const importAll = (context: __WebpackModuleApi.RequireContext) => {
         }, {} as Record<string, string>);
 };
 
+const _importAll = (context: __WebpackModuleApi.RequireContext) => {
+    return context.keys()
+        .reduce((acc, key) => {
+            const module = context(key);
+            
+            acc[key] = module;
+
+            return acc;
+        }, {} as Record<string, string>);
+};
+
 const flagContext = require.context(
     "./assets/images/flags",
     false,
@@ -31,6 +42,13 @@ const svgContext = require.context(
     "sync"
 );
 
+const mapContext = require.context(
+    "./assets/maps",
+    false,
+    /\.svg$/,
+    "sync"
+);
+
 interface SuggestionsCriteria {
     page: number;
     pageSize: number;
@@ -40,6 +58,7 @@ interface SuggestionsCriteria {
 
 const flags = importAll(flagContext);
 const svgs = importAll(svgContext);
+const maps = _importAll(mapContext);
 
 export const getSuggestions = ({
     value,
@@ -90,12 +109,13 @@ export const getFlags = ({
     if(Object.keys(tagMatchesPerCountry).length) {
         result = result.filter(pr => tagMatchesPerCountry[pr["iso3166-1-alpha-2"]] === tags.length);
     }
-
+    console.log(maps)
     result = result.slice(from, to)
         .map(pr => ({
             ...pr,
             flagImageUrl: flags[pr.flagImageUrl],
             flagSvgUrl: svgs[pr.flagSvgUrl],
+            mapUrl: maps[pr.mapUrl],
         }))
 
     resolve(result)

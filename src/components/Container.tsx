@@ -41,6 +41,7 @@ const Container: FunctionComponent<Props> = ({
             countryName: "",
             flagImageUrl: "",
             flagSvgUrl: "",
+            mapUrl: "",
             tags: [],
         },
         isShowing: false,
