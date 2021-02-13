@@ -590,5 +590,62 @@
             "red",
             "five pointed star"
         ]
+    },
+    {
+        "iso3166-1-alpha-2": "mx",
+        "tags": [
+            "Mexico",
+            "green",
+            "white",
+            "red",
+            "coat of arms",
+            "eagle",
+            "bird",
+            "serpent",
+            "cactus",
+            "prickly pear cactus",
+            "rock",
+            "lake"
+        ]
+    },
+    {
+        "iso3166-1-alpha-2": "gt",
+        "tags": [
+            "Guatemala",
+            "blue",
+            "white",
+            "coat of arms",
+            "scroll",
+            "rifle",
+            "bay laurel",
+            "firearm"
+        ]
+    },
+    {
+        "iso3166-1-alpha-2": "hn",
+        "tags": [
+            "Honduras",
+            "horizontal",
+            "blue",
+            "white",
+            "five stars",
+            "five pointed star"
+        ]
+    },
+    {
+        "iso3166-1-alpha-2": "hn",
+        "tags": [
+            "El Salvador",
+            "horizontal",
+            "blue",
+            "white",
+            "golden amber",
+            "coat of arms",
+            "DIOS UNIÓN LIBERTAD",
+            "REPÚBLICA DE EL SALVADOR EN LA AMÉRICA CENTRAL",
+            "spears",
+            "scroll",
+            "triangle"
+        ]
     }
 ]
